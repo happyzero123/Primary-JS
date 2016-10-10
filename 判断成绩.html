@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="测试成绩等级">
+	<script src="jquery-1.10.2.js"></script>
+	<script>
+		$('#btn').click(function(){
+			var txt = $('#txt').val();
+			if(txt>=90){
+				console.log("优秀");
+			}else if(txt>=80){
+				console.log("良好");
+			}else if(txt>=60){
+				console.log("及格");
+			}else{
+				console.log("不及格");
+			}
+		})
+
+	</script>
+</body>
+</html>

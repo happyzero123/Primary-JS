@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/animate.css/3.5.2/animate.min.css">
+	<style>
+		#txt{color: #f00;font-size: 30px;text-shadow: 1px 0 #0ff,-1px 0 #0ff;}
+		p{color: #f00;font-size: 30px;text-shadow: 1px 0 #ff0,-1px 0 #ff0;text-align: center;}
+		.box{width: 200px;line-height: 60px;color: #000;background-color: #ff0;border: 1px solid #000;text-decoration: none;text-align: center;font-size: 30px;margin-left: 30px;margin-top: 10px;}
+		a{display: block;width: 200px;line-height: 60px;color: #000;text-decoration: none;text-align: center;font-size: 30px;}
+		.hide{display: none;}
+
+	</style>
+	
+</head>
+<body>
+	<input type="text" id="txt">
+	<div class="box">
+		<span>抢购开始</span>
+		<a class="hide" href="#">抢购开始</a>
+	</div>
+	<p class="hide animated tada">吃饭啦！！！</p>
+	<script src="jquery-1.10.2.js"></script>
+	<script>
+		// var H=parseInt(44500/3600);
+		// var M=parseInt((44500-H*3600)/60);
+		// var S=44500-H*3600-M*60;
+		
+
+		var h=13,m=24,s=20;
+		var maxTime=h*3600+m*60+s;
+		function getTime(){
+			var date=new Date();
+			var hour=date.getHours();
+			var minute=date.getMinutes();
+			var second=date.getSeconds();
+			var nowTime=hour*3600+minute*60+second;
+			var showTime=maxTime-nowTime;
+			var h=parseInt(showTime/3600);
+			if(h<10){h="0"+h;}
+			var m=parseInt((showTime-h*3600)/60);
+			if(m<10){m="0"+m;}
+			var s=showTime-h*3600-m*60;
+			if(s<10){s="0"+s;}
+			$('#txt').val("剩余"+h+"时"+m+"分钟"+s+"秒");
+			
+			if(parseInt(showTime)<=0){
+				clearInterval(t);
+				$('#txt').val("剩余"+00+"时"+00+"分钟"+00+"秒");
+
+				$('p').removeClass('hide');
+				$('a').removeClass('hide');
+				$('span').addClass('hide');
+				$('.box').css('backgroundColor','#f00');
+				
+			}
+			
+		}
+		getTime();
+		var t=setInterval(getTime,1000);
+
+
+		// 抢购倒计时
+		var date=new Date();
+		var hour=date.getHours();
+		var minute=date.getMinutes();
+		var second=date.getSeconds();
+		var nowTime=hour*3600+minute*60+second;
+		var showTime=maxTime-nowTime;
+		if(parseInt(showTime)<=0){
+			function getSecondTime(){
+				var n=30;
+				for (var i = 1; i < 30; i--) {
+						n=n-i
+						$('#txt').val("剩余"+n+"秒抢购结束");
+					};	
+				console.log(num)
+				if(n<10){n="0"+n;}
+				
+				if(parseInt(n)<=0){
+					clearInterval(g);
+					$('#txt').val("剩余"+00+"秒");
+				}
+			}
+			getSecondTime();
+					
+			var g=setInterval(getSecondTime,1000);
+		}
+	</script>
+</body>
+</html>

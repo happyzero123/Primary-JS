@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#txt1,#txt3,#txt2{width: 80px;}
+		#fh{width: 20px;}
+		#txt1{background-color: #0f0;}
+		#txt2{background-color: #00f;}
+		#txt3{background-color: #f00;}
+		#fh{background-color: #ff0;}
+		
+	</style>
+</head>
+<body>
+	<input type="text" id="txt1">
+	<input type="text" id="fh">
+	<input type="text" id="txt2">
+	<span>=</span>
+	<input type="text" id="txt3">
+	<input type="button" value="计算" id="jis">
+
+	<script src="jquery-1.10.2.js"></script>
+	<script>
+
+				// 第一种方法
+
+		// $('#jis').click(function(){
+		// 	var txt1=Number($('#txt1').val());
+		// 	var txt2=Number($('#txt2').val());
+		// 	var fh=$('#fh').val();
+		// 	if(fh=="+"){
+		// 		$('#txt3').val(txt1+txt2);
+		// 	}else if(fh=="-"){
+		// 		$('#txt3').val(txt1-txt2);
+		// 	}else if(fh=="*"){
+		// 		$('#txt3').val(txt1*txt2);
+		// 	}else if(fh=="/"){
+		// 		$('#txt3').val(txt1/txt2);
+		// 	}
+		// })
+
+				// 第二种方法
+		// $('#jis').click(function(){
+		// 	var txt1=Number($('#txt1').val());
+		// 	var txt2=Number($('#txt2').val());
+		//  	var fh=$('#fh').val();
+		// 	switch (fh){
+		// 		case "+" :$('#txt3').val(txt1+txt2);break;
+		// 		case "-" :$('#txt3').val(txt1-txt2);break;
+		// 		case "*" :$('#txt3').val(txt1*txt2);break;
+		// 		case "/" :$('#txt3').val(txt1/txt2);break;
+		// 	}
+		// })
+
+				// 第三种方法
+		$('#jis').click(function(){
+			var txt1=Number($('#txt1').val());
+			var txt2=Number($('#txt2').val());
+		 	var fh=$('#fh').val();
+		 	var txt3=0;
+			switch (fh){
+				case "+" :txt3=Number(txt1)+Number(txt2);break;
+				case "-" :txt3=Number(txt1)-Number(txt2);break;
+				case "*" :txt3=Number(txt1)*Number(txt2);break;
+				case "/" :txt3=Number(txt1)/Number(txt2);break;
+			}
+			$('#txt3').val(txt3);
+		})
+
+	</script>
+</body>
+</html>

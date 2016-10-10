@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>名单</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		.top{margin-top: 30px;margin-left: 70px;}
+		table{margin-top: 20px;margin-left: 50px;border-collapse: collapse;}
+	
+		td{padding: 0;border: 1px solid #000;width: 200px;height: 40px;text-align: center;}
+	</style>
+</head>
+<body>
+	<div class="top">
+		<label for="">姓名：</label>
+		<input type="text" id="txt1">
+		<label for="">年龄：</label>
+		<input type="text" id="txt2">
+		<label for="">性别：</label>
+		<input type="text" id="txt3">
+		<label for="">专业：</label>
+		<input type="text" id="txt4">
+		<input type="button" value="提交" id="btn">
+		
+	</div>
+	<table id="list">
+		<tr>
+			<td>姓名</td>
+			<td>年龄</td>
+			<td>性别</td>
+			<td>专业</td>
+			<td>操作</td>
+		</tr>
+		<tr>
+			<td>张三</td>
+			<td>21</td>
+			<td>男</td>
+			<td>计算机</td>
+			<td><input type="button" value="删除"></td>
+		</tr>
+		<tr>
+			<td>李四</td>
+			<td>22</td>
+			<td>男</td>
+			<td>电子商务</td>
+			<td><input type="button" value="删除"></td>
+		</tr>
+	</table>
+
+	<script>
+		function G(sID){
+			return document.getElementById(sID);
+		}
+		G('btn').onclick = function(){
+			var txtVal1 = document.getElementById('txt1').value;
+			var txtVal2 = document.getElementById('txt2').value;
+			var txtVal3 = document.getElementById('txt3').value;
+			var txtVal4 = document.getElementById('txt4').value;
+			var tr = document.createElement('tr');
+			var td1 = document.createElement('td');
+			var td2 = document.createElement('td');
+			var td3 = document.createElement('td');
+			var td4 = document.createElement('td');
+			var td5 = document.createElement('td');
+			var input = document.createElement('input');
+			var text1 = document.createTextNode(txtVal1);
+			var text2 = document.createTextNode(txtVal2);
+			var text3 = document.createTextNode(txtVal3);
+			var text4 = document.createTextNode(txtVal4);
+
+			td1.appendChild(text1);
+			td2.appendChild(text2);
+			td3.appendChild(text3);
+			td4.appendChild(text4);
+			G('list').appendChild(tr);
+			input.value="删除";
+			input.type="button";
+			td5.appendChild(input);
+
+			tr.appendChild(td1);
+			tr.appendChild(td2);
+			tr.appendChild(td3);
+			tr.appendChild(td4);
+			tr.appendChild(td5);
+
+	}
+	G('list').onclick = function(event){
+		var target = event.target;
+		if(target.value== '删除'){
+			target.parentNode.parentNode.parentNode.removeChild(target.parentNode.parentNode);
+		}
+	
+	}
+	</script>
+</body>
+</html>

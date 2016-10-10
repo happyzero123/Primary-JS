@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#txt{margin-top: 20px;margin-bottom: 30px;}
+		.numb{width: 140px;height: 100px;margin-left: 30px;}
+		.num{margin-right: 5px;margin-bottom: 10px;}
+		.fh{margin-left: 30px;margin-bottom: 10px;}
+		.sign{margin-right: 5px;}
+		.btn{margin-left: 30px;}
+	</style>
+</head>
+<body>
+	<input type="text" id="txt">
+	<div class="numb">
+		<input type="button" class="num" value="0">
+		<input type="button" class="num" value="1">
+		<input type="button" class="num" value="2">
+		<input type="button" class="num" value="3">
+		<input type="button" class="num" value="4">
+		<input type="button" class="num" value="5">
+		<input type="button" class="num" value="6">
+		<input type="button" class="num" value="7">
+		<input type="button" class="num" value="8">
+		<input type="button" class="num" value="9">
+		<input type="button" class="num" value=".">
+	</div>
+	<div class="fh">
+		<input type="button" class="sign" value="+">
+		<input type="button" class="sign" value="-">
+		<input type="button" class="sign" value="*">
+		<input type="button" class="sign" value="/">
+	</div>
+	<div class="btn">
+		<input type="button" class="resuit" value="=">
+		<input type="button" class="delete" value="c">
+	</div>
+
+
+	<script src="jquery-1.10.2.js"></script>
+	<script>
+	var num1="";
+	var num2="";
+	var sign="";
+	var resuit="";
+	$('.num').click(function(){
+		var num = $(this).val();
+		if(sign==""){
+			
+			num1=num1+num;
+			$('#txt').val(num1);
+		 } else{	
+			
+			num2=num2+num;
+			$('#txt').val(num2);
+		}
+	})
+	 $('.sign').click(function(){
+		 	sign=$(this).val();
+		 	
+	 })
+	 $('.resuit').click(function(){
+	 	switch (sign){
+			case "+" :resuit=Number(num1)+Number(num2);break;
+			case "-" :resuit=Number(num1)-Number(num2);break;
+			case "*" :resuit=Number(num1)*Number(num2);break;
+			case "/" :resuit=Number(num1)/Number(num2);break;
+		}
+		$('#txt').val(resuit);
+		
+		// $('.num').click(function(){
+		// 	var num = $(this).val();
+		// 	var num1="";
+		// 	num1=num1+num
+ 	// 		$('#txt').val(num1);
+		// })
+	})
+
+	$('.delete').click(function(){
+		$('#txt').val(resuit="",num1="",num2="",sign="");
+	})
+	 
+
+		
+
+	</script>
+</body>
+</html>
