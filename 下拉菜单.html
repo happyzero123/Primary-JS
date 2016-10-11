@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{background-color: #e8e013;}
+		li{list-style: none;font-size: 18px;}
+		a{display: block; text-decoration: none;color:#333;}
+		.mainnav{width: 500px;margin: 0 auto;}
+		.mainnav>li{position: relative;
+		 background-color: #fff;float: left;}
+		.mainnav>li>a{text-align: center;line-height: 40px; width: 100px;}
+		.subnav{position: absolute;height: 0;overflow: hidden; -webkit-transition: height 1s ease-in;
+		-moz-transition: height 1s ease-in;
+		-ms-transition: height 1s ease-in;
+		-o-transition: height 1s ease-in;
+		transition: height 1s ease-in;
+		
+		}
+		.subnav li{background-color: #0ff;}
+		.subnav li a{line-height: 40px;width: 150px;text-indent: 18px;}
+		.mainnav>li:hover ul{height: 200px;}
+		.mainnav>li:hover{background-color: #0ff;}
+		.text{clear: both;}
+
+	</style>
+</head>
+<body>
+	<ul class="mainnav">
+		<li><a href="#">mainnav</a></li>
+		<li><a href="#">mainnav</a></li>
+		<li><a href="#">mainnav</a>
+			<ul class="subnav">
+				<li><a href="#">subnav</a></li>
+				<li><a href="#">subnav</a></li>
+				<li><a href="#">subnav</a></li>
+				<li><a href="#">subnav</a></li>
+				<li><a href="#">subnav</a></li>
+			</ul>
+		</li>
+
+		<li><a href="#">mainnav</a></li>
+		<li><a href="#">mainnav</a></li>
+	</ul>
+	<div class="text">
+快讯:韩军拟增中远程地空制导武器 加强首都防御
+
+2016年07月13日 14:37 环球时报-环球网
+
+韩联社7月13日消息，韩军拟新增中远程地空制导武器加强首都圈防御。
+
+另据韩联社7月13日报道，韩国国防部国防政策室长柳济昇13日在国防部大楼召开记者会并表示，韩美最终决定将“萨德”反导系统(末段高空区域防御系统)部署在位于半岛东南部的庆尚北道星州郡。
+
+柳济昇表示，韩美联合工作组对军事效用、居民安全等各种因素进行研究，认为星州地区最适合部署萨德，韩美两国防长对此予以批准。据此，萨德反导系统将部署于星州郡星山里的韩国空军防空炮兵部队驻地。
+
+韩联社说，鉴于萨德的最大射程为200公里，在星州部署萨德可覆盖坐落京畿道平泽和全罗北道群山的驻韩美军基地、韩国陆海空三军总部所在地(忠清南道鸡龙台)以及北至江原道江陵附近的广大地区，可有效抗衡来自朝鲜的弹道导弹威胁。
+
+美国有线电视新闻网(CNN)称，华盛顿和首尔方面上周宣布部署萨德系统，此举已激怒朝鲜方面。
+</div>
+</body>
+</html>
